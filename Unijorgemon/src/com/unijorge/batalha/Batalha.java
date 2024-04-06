@@ -5,7 +5,7 @@ import com.unijorge.player.Player;
 public class Batalha {
 	private boolean ataque;
 	
-	
+	//verifica o acerto do ataque
 	public boolean verificarAtaque() {
 		int testAtaquePlayer =(int) (Math.random()*20+1);
 		int testOutroPlayer =(int) (Math.random()*20+1);
