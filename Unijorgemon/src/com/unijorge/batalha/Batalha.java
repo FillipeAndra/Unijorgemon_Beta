@@ -32,7 +32,7 @@ public class Batalha {
 		}
 		
 	}
-	
+	//para anunciar vitória ele verifcia se todos os pokemons de um player estão caídos
 	public String anunciarVitoria(Player player1, Player player2) {
 		int contDerrota = 0;
 		for(int i = 0; i <= player1.getPokemons().size(); i++ ) {
