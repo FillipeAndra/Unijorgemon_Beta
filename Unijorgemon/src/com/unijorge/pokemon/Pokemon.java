@@ -37,8 +37,5 @@ public abstract class Pokemon {
 	}
 	
 	
-	
-	
-	
 }
 
