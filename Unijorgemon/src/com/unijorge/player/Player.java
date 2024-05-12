@@ -8,6 +8,10 @@ public class Player {
 	private ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
 	
 	//limitação minima da entrada será feita na principal
+	
+	public Player() {
+		
+	}
 	public Player(String nome, ArrayList<Pokemon> pokemon) {
 		this.nome = nome;
 		for(int i =0; i <=5; i++) {
