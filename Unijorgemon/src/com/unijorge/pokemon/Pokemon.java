@@ -1,11 +1,10 @@
 package com.unijorge.pokemon;
-import java.util.List;
 import java.util.ArrayList;
 import com.unijorge.ataque.Ataque;
 
 public abstract class Pokemon {
 	private String nome;
-	private List<Ataque> ataques = new ArrayList<Ataque>();
+	private ArrayList<Ataque> ataques = new ArrayList<Ataque>();
 	private int hp;
 	
 	public String getNome() {
@@ -15,16 +14,20 @@ public abstract class Pokemon {
 		this.nome = nome;
 	}
 	
-	public List<Ataque> getAtaques() {
+	public ArrayList<Ataque> getAtaques() {
 		return this.ataques;
 	}
 	
-	public void setAtaques(Ataque ataque1, Ataque ataque2) {
-		
-		if (ataques.isEmpty() == true) {
-			this.ataques.add(ataque1);
-			this.ataques.add(ataque2);
+	
+	
+	protected void setAtaques(ArrayList<Ataque> ataque) {
+		for(int i=0;i<=3;i++) {
+			if (ataques.get(i) == null) {
+				ataques.add(i,ataque.get(i));
+			}
+			
 		}
+		
 	}
 	public int getHp() {
 		return hp;
@@ -35,7 +38,7 @@ public abstract class Pokemon {
 	
 	
 	
+	
+	
 }
-///al = new al (new LIghtbolt(123), new Surf (1,2,3) )
-/// Pichachu p = new Picachu(new LightBolt(1,2,3),
-//Pichachu p = new Picachu(al
+
