@@ -99,13 +99,10 @@ public class Arena {
 			}	
 		}
 		System.out.println("Lista de pokemons de "+player1.getNome()+": ");
-		for(int i = 0; i < player1.getPokemons().size(); i++) {
-			System.out.println(player1.getPokemons().get(i).getNome()+" ");
-		}
+		System.out.println(player1.getPokemons());
+		//teste de impressão
 		System.out.println("Lista de pokemons de "+player2.getNome()+": ");
-		for(int i = 0; i < player2.getPokemons().size(); i++) {
-			System.out.println(player2.getPokemons().get(i).getNome()+" ");
-		}
+		System.out.println(player2.getPokemons());
 		//while (batalha.anunciarVitoria(player1, player2) == null) {
 			
 		//}

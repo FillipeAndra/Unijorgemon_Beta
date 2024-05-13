@@ -8,7 +8,7 @@ public abstract class Pokemon {
 	private int hp;
 	
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -35,6 +35,7 @@ public abstract class Pokemon {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
+	
 	
 	
 }
