@@ -81,28 +81,31 @@ public class Arena {
 							break;
 						default:
 							System.out.printf("Erro você digitou um número não opicional");
-							
+								
 					}
-					if(numeroPokemon <= 12) {
+					if(numeroPokemon <= 12 && numeroPokemon>=1) {
 						break;
 					}
 				}
-				
-				switch(i) {
-					case 0:
-						player1 = new Player(nome,pokemon);
-						pokemon.clear();
-						break;
-					case 1:
-						player2 = new Player(nome,pokemon);
-						break;
-				}	
-					
 			}
-			
-		
+			switch(i) {
+				case 0:
+					player1 = new Player(nome,pokemon);
+					pokemon.clear();
+					break;
+				case 1:
+					player2 = new Player(nome,pokemon);
+					break;
+			}	
 		}
-		System.out.println("teste: "+player1.getNome() + ""+ player2.getNome());
+		System.out.println("Lista de pokemons de "+player1.getNome()+": ");
+		for(int i = 0; i < player1.getPokemons().size(); i++) {
+			System.out.println(player1.getPokemons().get(i).getNome()+" ");
+		}
+		System.out.println("Lista de pokemons de "+player2.getNome()+": ");
+		for(int i = 0; i < player2.getPokemons().size(); i++) {
+			System.out.println(player2.getPokemons().get(i).getNome()+" ");
+		}
 		//while (batalha.anunciarVitoria(player1, player2) == null) {
 			
 		//}
