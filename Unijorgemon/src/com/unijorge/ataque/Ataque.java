@@ -2,14 +2,14 @@ package com.unijorge.ataque;
 
 public abstract class Ataque {
 	
-	private String nome;
-    private int dano;
+	protected String nome;
+    protected int dano;
     
     public String getNome(){
         return this.nome;
     }
     
-    public void setNome(String n){
+    protected void setNome(String n){
         this.nome = n;
     }
     
@@ -17,7 +17,7 @@ public abstract class Ataque {
         return this.dano;
     }
     
-    public void setDano(int d){
+    protected void setDano(int d){
         this.dano = d;
     }
 
