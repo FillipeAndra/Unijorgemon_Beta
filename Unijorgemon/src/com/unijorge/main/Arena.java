@@ -1,4 +1,4 @@
-package com.unijorge.arena;
+package com.unijorge.main;
 
 import com.unijorge.player.Player;
 import com.unijorge.pokemon.*;
