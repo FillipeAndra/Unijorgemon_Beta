@@ -2,7 +2,7 @@ package com.unijorge.ataque;
 import com.unijorge.tipos.TipoFogo;
 
 public class Ember extends Ataque implements TipoFogo {
-	private String nome = "ember";
-	private int dano = 15;
+	private final String nome = "ember";
+	private final int dano = 15;
 	
 }
