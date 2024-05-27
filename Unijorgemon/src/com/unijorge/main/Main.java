@@ -117,6 +117,12 @@ public class Main {
 		}
 
 		Player primeiro = batalha.quemComeca(player1, player2);
+		Player segundo;
+		if(primeiro == player1) {
+			segundo = player2;
+		}else {
+			segundo = player1;
+		}
 		
 		/* teste de impressão
 		System.out.println("Lista de pokemons de " + player1.getNome() + ": ");
@@ -127,11 +133,82 @@ public class Main {
 		*/
 
 		while (batalha.anunciarVitoria(player1, player2) == null) {
+			int escolhaAcao;
+			System.out.println(primeiro.getNome() + ", o que você escolhe?");
 			
-			System.out.println(primeiro.getNome() + ", qual ataque você escolhe?");
+			System.out.println("1) escolher ataque do pokemon\n"
+					+ "2)trocar de pokemon");
 			
+			escolhaAcao = sc.nextInt();
+			if(escolhaAcao == 1) {
+				int escolhaAtaque;
+				System.out.println("Qual o ataque"+primeiro.getPokemons()
+				.get(0).getNome() +" vai fazer?");
+				
+				System.out.println("1) "+primeiro.getPokemons()
+						.get(0).getAtaques().get(0));
+				System.out.println("2) "+primeiro.getPokemons()
+						.get(0).getAtaques().get(1));
+				System.out.println("3) "+primeiro.getPokemons()
+						.get(0).getAtaques().get(2));
+				System.out.println("4) "+primeiro.getPokemons()
+						.get(0).getAtaques().get(3));
+				
+				escolhaAtaque = sc.nextInt();
 			
-
+				boolean verificaAtaque = batalha.verificarAtaque();
+				if(verificaAtaque = true) {
+					batalha.aplicarDano(primeiro, segundo, escolhaAtaque);
+				}else {
+					System.out.println("Você errou, "+primeiro.getNome());
+				}
+			}else if(escolhaAcao == 2) {
+				int escolhaPokemon;
+				System.out.println(primeiro.getNome()+", seu pokemon atual é"
+						+ primeiro.getPokemons().get(0).getNome()+
+						". Para qual pokemon Você quer trocar?");
+				
+				System.out.println("1) "+primeiro.getPokemons().get(1).getNome());
+				System.out.println("2) "+primeiro.getPokemons().get(2).getNome());
+				System.out.println("3) "+primeiro.getPokemons().get(3).getNome());
+				System.out.println("4) "+primeiro.getPokemons().get(4).getNome());
+				System.out.println("5) "+primeiro.getPokemons().get(5).getNome());
+				
+				escolhaPokemon = sc.nextInt();
+				
+				switch(escolhaPokemon) {
+				case 1: 
+					Pokemon pokemonSelecionado1 = primeiro.getPokemons().get(escolhaPokemon);
+					primeiro.getPokemons().remove(escolhaPokemon);
+					primeiro.getPokemons().add(0,pokemonSelecionado1);
+					break;
+				case 2: 
+					Pokemon pokemonSelecionado2 = primeiro.getPokemons().get(escolhaPokemon);
+					primeiro.getPokemons().remove(escolhaPokemon);
+					primeiro.getPokemons().add(0,pokemonSelecionado2);
+					break;
+				case 3:
+					Pokemon pokemonSelecionado3 = primeiro.getPokemons().get(escolhaPokemon);
+					primeiro.getPokemons().remove(escolhaPokemon);
+					primeiro.getPokemons().add(0,pokemonSelecionado3);
+					break;
+				case 4:
+					Pokemon pokemonSelecionado4 = primeiro.getPokemons().get(escolhaPokemon);
+					primeiro.getPokemons().remove(escolhaPokemon);
+					primeiro.getPokemons().add(0,pokemonSelecionado4);
+					break;
+				case 5: 
+					Pokemon pokemonSelecionado5 = primeiro.getPokemons().get(escolhaPokemon);
+					primeiro.getPokemons().remove(escolhaPokemon);
+					primeiro.getPokemons().add(0,pokemonSelecionado5);
+					break;
+				default:
+					System.out.println("por favor digite um número válido!");
+				}
+			}
+			Player primeiroViraSegundo = primeiro;
+			primeiro = segundo;
+			segundo = primeiroViraSegundo;
 		}
 
 		sc.close();

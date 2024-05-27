@@ -5,4 +5,9 @@ public class Ember extends Ataque implements TipoFogo {
 	private final String nome = "ember";
 	private final int dano = 15;
 	
+	@Override
+	public String toString() {
+		return this.nome;
+	}
+	
 }

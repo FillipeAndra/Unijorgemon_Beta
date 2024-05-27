@@ -4,4 +4,9 @@ import com.unijorge.tipos.*;
 public class Tackle extends Ataque implements TipoNormal{
 	private final String nome = "Tackle";
 	private final int dano = 15;
+
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 }
