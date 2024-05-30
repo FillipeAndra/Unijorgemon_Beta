@@ -19,18 +19,6 @@ public class Main {
 		String nome;
 		ArrayList<Pokemon> pokemon = new ArrayList<Pokemon>();
 		ArrayList<Integer> numeroPokemonControle = new ArrayList<Integer>();
-		Blastoise p1 = new Blastoise();
-		Blaziken p2 = new Blaziken();
-		Charizard p3 = new Charizard();
-		Empoleon p4 = new Empoleon();
-		Feraligatr p5 = new Feraligatr();
-		Infernape p6 = new Infernape();
-		Meganium p7 = new Meganium();
-		Sceptile p8 = new Sceptile();
-		Swampert p9 = new Swampert();
-		Torterra p10 = new Torterra();
-		Typhlosion p11 = new Typhlosion();
-		Venusaur p12 = new Venusaur();
 		int numeroPokemon;
 
 		for (int i = 0; i < 2; i++) {
@@ -52,40 +40,40 @@ public class Main {
 						numeroPokemonControle.add(numeroPokemon);
 						switch (numeroPokemon) {
 						case 1:
-							pokemon.add(p1);
+							pokemon.add(new Blastoise());
 							break;
 						case 2:
-							pokemon.add(p2);
+							pokemon.add(new Blaziken());
 							break;
 						case 3:
-							pokemon.add(p3);
+							pokemon.add(new Charizard());
 							break;
 						case 4:
-							pokemon.add(p4);
+							pokemon.add(new Empoleon());
 							break;
 						case 5:
-							pokemon.add(p5);
+							pokemon.add(new Feraligatr());
 							break;
 						case 6:
-							pokemon.add(p6);
+							pokemon.add(new Infernape());
 							break;
 						case 7:
-							pokemon.add(p7);
+							pokemon.add(new Meganium());
 							break;
 						case 8:
-							pokemon.add(p8);
+							pokemon.add(new Sceptile());
 							break;
 						case 9:
-							pokemon.add(p9);
+							pokemon.add(new Swampert());
 							break;
 						case 10:
-							pokemon.add(p10);
+							pokemon.add(new Torterra());
 							break;
 						case 11:
-							pokemon.add(p11);
+							pokemon.add(new Typhlosion());
 							break;
 						case 12:
-							pokemon.add(p12);
+							pokemon.add(new Venusaur());
 							break;
 						default:
 							System.out.printf("Erro! Um valor inválido foi digitado. "
@@ -117,7 +105,19 @@ public class Main {
 		}
 
 		Player primeiro = batalha.quemComeca(player1, player2);
+		Player segundo;
+		if(primeiro == player1) {
+			segundo = player2;
+		}else {
+			segundo = player1;
+		}
 		
+		/*teste de armazenamento dos ataques
+		System.out.println(primeiro.getPokemons()
+						.get(0).getAtaques());
+		System.out.println(primeiro.getPokemons()
+				.get(0).getNome());
+		*/
 		/* teste de impressão
 		System.out.println("Lista de pokemons de " + player1.getNome() + ": ");
 		System.out.println(player1.getPokemons());
@@ -125,15 +125,87 @@ public class Main {
 		System.out.println("Lista de pokemons de " + player2.getNome() + ": ");
 		System.out.println(player2.getPokemons());
 		*/
+		
+		
+		/* teste de criação de pokemon e anunciar vitória
+		System.out.println(batalha.anunciarVitoria(player1, player2));
+		System.out.println(player1.getPokemons().get(0).getHp());
+		*/
 
+		
 		while (batalha.anunciarVitoria(player1, player2) == null) {
+			int escolhaAcao;
+			if(primeiro.getPokemons().get(0).getHp() == 0) {
+				
+				int escolhaPokemon;
+				System.out.println(primeiro.getNome()+", seu pokemon atual é "
+						+ primeiro.getPokemons().get(0).getNome()+
+						". E ele não aguenta mais batalhar "
+						+ "para qual pokemon Você quer trocar?");
+				
+				System.out.println(batalha.escolhaPokemonTroca(primeiro));
+				
+				escolhaPokemon = sc.nextInt();
+				
+				batalha.trocarPokemon(escolhaPokemon, primeiro);
+				
+				
+			}else {
+				System.out.println(primeiro.getNome() + ", o que você escolhe?");
+				
+				System.out.println("1) escolher ataque do pokemon\n"
+						+ "2)trocar de pokemon");
+				
+				escolhaAcao = sc.nextInt();
+				if(escolhaAcao == 1) {
+					int escolhaAtaque;
+					System.out.println("Qual o ataque "+primeiro.getPokemons()
+					.get(0).getNome() +" vai fazer?");
+					
+					System.out.println("1) "+primeiro.getPokemons()
+							.get(0).getAtaques().get(0).getNome());
+					System.out.println("2) "+primeiro.getPokemons()
+							.get(0).getAtaques().get(1).getNome());
+					System.out.println("3) "+primeiro.getPokemons()
+							.get(0).getAtaques().get(2).getNome());
+					System.out.println("4) "+primeiro.getPokemons()
+							.get(0).getAtaques().get(3).getNome());
+					
+					escolhaAtaque = sc.nextInt()-1;
+				
+					boolean verificaAtaque = batalha.verificarAtaque();
+					if(verificaAtaque == true) {
+						int dano = batalha.aplicarDano(primeiro, segundo, escolhaAtaque, verificaAtaque);
+						System.out.println("O "+primeiro.getPokemons().get(0).getNome()+ " de "+
+						primeiro.getNome()+" causou "+
+						dano+
+						" de dano ao "+ segundo.getPokemons().get(0).getNome()+" de "+
+						segundo.getNome()+" que está agora com "+segundo.getPokemons().get(0).getHp()+
+						" de vida devido ao ataque "+ primeiro.getPokemons().get(0).
+						getAtaques().get(escolhaAtaque).getNome());
+					}else if(verificaAtaque == false){
+						System.out.println("seu pokemon errou, "+primeiro.getNome());
+					}
+				}else if(escolhaAcao == 2) {
+					int escolhaPokemon;
+					System.out.println(primeiro.getNome()+", seu pokemon atual é "
+							+ primeiro.getPokemons().get(0).getNome()+
+							". Para qual pokemon Você quer trocar?");
+					
+					System.out.println(batalha.escolhaPokemonTroca(primeiro));
+					
+					escolhaPokemon = sc.nextInt();
+					
+					batalha.trocarPokemon(escolhaPokemon, primeiro);
+				}
+			}
 			
-			System.out.println(primeiro.getNome() + ", qual ataque você escolhe?");
-			
-			
-
+			Player primeiroViraSegundo = primeiro;
+			primeiro = segundo;
+			segundo = primeiroViraSegundo;
 		}
-
+		
+		System.out.println(batalha.anunciarVitoria(player1, player2));
 		sc.close();
 	}
 

@@ -5,15 +5,21 @@ import java.util.ArrayList;
 import com.unijorge.ataque.*;
 
 public class Venusaur extends Pokemon implements TipoPlanta {
-	private final String nome = "Venusaur";
-	private final int hp = 100;
+	private static String nome = "Venusaur";
+	private static int hp = 100;
 	
-	private Solar solar;
-	private BulletSeed bulletSeed;
-	private Tackle tackle;
-	private Boom boom;
+	private static Solar solar = new Solar();
+	private static BulletSeed bulletSeed = new BulletSeed();
+	private static Tackle tackle = new Tackle();
+	private static Boom boom = new Boom();
 	
-	private final ArrayList<Ataque> ataques = new ArrayList<Ataque>((Arrays.asList(solar, bulletSeed, tackle, boom)));
+	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(solar, bulletSeed, tackle, boom));
+	
+	public Venusaur() {
+		super(nome, ataques,hp);
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public String toString() {
 		return this.nome; 

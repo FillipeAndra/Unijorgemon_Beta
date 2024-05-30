@@ -7,15 +7,21 @@ import com.unijorge.tipos.TipoFogo;
 
 public class Infernape extends Pokemon implements TipoFogo {
 	
-	private final String nome = "Infernape";
-	private final int hp = 100;
+	private static String nome = "Infernape";
+	private static int hp = 100;
 	
-	private Ember ember;
-	private Pledge pledge;
-	private Body body;
-	private Tackle tackle;
+	private static Ember ember = new Ember();
+	private static Pledge pledge = new Pledge();
+	private static Body body = new Body();
+	private static Tackle tackle = new Tackle();
 	
-	private final ArrayList<Ataque> ataques = new ArrayList<Ataque>((Arrays.asList(ember, pledge, tackle, body)));
+	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(ember, pledge, tackle, body));
+	
+	public Infernape() {
+		super(nome, ataques,hp);
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public String toString() {
 		return this.nome; 

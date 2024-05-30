@@ -5,16 +5,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Blastoise extends Pokemon implements TipoAgua{
+
+	private static String nome = "Blastoise";
+	private static int hp = 100;
 	
-	private final String nome = "Blastoise";
-	private final int hp = 100;
+	private static Bubble bubble = new Bubble();
+	private static Hydro hydro = new Hydro();
+	private static Boom boom = new Boom();
+	private static Tackle tackle = new Tackle();
 	
-	private Bubble bubble;
-	private Hydro hydro;
-	private Boom boom;
-	private Tackle tackle;
+	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(bubble,hydro,boom,tackle));
 	
-	private final ArrayList<Ataque> ataques = new ArrayList<Ataque>((Arrays.asList(bubble, hydro, tackle, boom )));
+	
+	public Blastoise() {
+		super("Blastoise", ataques,100);
+		// TODO Auto-generated constructor stub
+		
+	}
 	
 	
 	@Override

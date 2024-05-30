@@ -2,6 +2,16 @@ package com.unijorge.ataque;
 import com.unijorge.tipos.*;
 
 public class Tackle extends Ataque implements TipoNormal{
-	private final String nome = "Tackle";
-	private final int dano = 15;
+	private static String nome = "Tackle";
+	private static int dano = 10;
+	
+	public Tackle() {
+		super(nome, dano);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 }

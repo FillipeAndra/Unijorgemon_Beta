@@ -6,15 +6,20 @@ import java.util.ArrayList;
 
 public class Torterra extends Pokemon implements TipoPlanta {
 	
-	private final String nome = "Torterra";
-	private final int hp = 100;
+	private static String nome = "Torterra";
+	private static int hp = 100;
 	
-	private Solar solar;
-	private Leaf leaf;
-	private Boom boom;
-	private Body body;
+	private static Solar solar = new Solar();
+	private static Leaf leaf = new Leaf();
+	private static Boom boom = new Boom();
+	private static Body body = new Body();
 	
-	private final ArrayList<Ataque> ataques = new ArrayList<Ataque>((Arrays.asList(solar, leaf, body, boom)));
+	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(solar, leaf, body, boom));
+	
+	public Torterra() {
+		super(nome, ataques,hp);
+		// TODO Auto-generated constructor stub
+	}
 	
 	@Override
 	public String toString() {
