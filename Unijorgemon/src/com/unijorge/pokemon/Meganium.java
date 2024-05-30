@@ -7,15 +7,20 @@ import com.unijorge.tipos.TipoPlanta;
 
 public class Meganium extends Pokemon implements TipoPlanta {
 	
-	private final String nome = "Meganium";
-	private final int hp = 100;
+	private static String nome = "Meganium";
+	private static int hp = 100;
 	
-	private BulletSeed bulletSeed;
-	private Leaf leaf;
-	private Body body;
-	private Tackle tackle;
+	private static BulletSeed bulletSeed = new BulletSeed();
+	private static Leaf leaf = new Leaf();
+	private static Body body = new Body();
+	private static Tackle tackle = new Tackle();
 	
-	private final ArrayList<Ataque> ataques = new ArrayList<Ataque>((Arrays.asList(bulletSeed, leaf, tackle, body)));
+	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(bulletSeed, leaf, tackle, body));
+	
+	public Meganium() {
+		super(nome, ataques,hp);
+		// TODO Auto-generated constructor stub
+	}
 	
 	@Override
 	public String toString() {

@@ -6,15 +6,23 @@ import com.unijorge.tipos.TipoFogo;
 
 public class Charizard extends Pokemon implements TipoFogo{
 	
-	private final String nome = "Charizard";
-	private final int hp = 100;
 	
-	private Magma magma;
-	private Pledge pledge;
-	private Tackle tackle;
-	private Body body;
+
+	private static String nome = "Charizard";
+	private static int hp = 100;
 	
-	private final ArrayList<Ataque> ataques = new ArrayList<Ataque>((Arrays.asList(pledge, magma, tackle, body )));
+	private static Magma magma = new Magma();
+	private static Pledge pledge = new Pledge();
+	private static Tackle tackle = new Tackle();
+	private static Body body = new Body();
+	
+	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(magma,pledge,tackle,body));
+	
+	public Charizard() {
+		super(nome,ataques, hp);
+		// TODO Auto-generated constructor stub
+				
+	}
 	
 	@Override
 	public String toString() {

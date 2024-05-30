@@ -5,6 +5,11 @@ public abstract class Ataque {
 	protected String nome;
     protected int dano;
     
+    public Ataque(String n, int d) {
+    	this.nome = n;
+    	this.dano = d;
+    }
+    
     public String getNome(){
         return this.nome;
     }

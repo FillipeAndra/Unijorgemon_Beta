@@ -5,16 +5,21 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Feraligatr extends Pokemon implements TipoAgua{
+
+	private static String nome = "Feraligatr";
+	private static int hp = 100;
 	
-	private final String nome = "Feraligatr";
-	private final int hp = 100;
+	private static MuddyWater muddyWater = new MuddyWater();
+	private static Hydro hydro = new Hydro();
+	private static Tackle tackle = new Tackle();
+	private static Boom boom = new Boom();
 	
-	private MuddyWater muddyWater;
-	private Hydro hydro;
-	private Tackle tackle;
-	private Boom boom;
+	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(muddyWater, hydro, tackle, boom));
 	
-	private final ArrayList<Ataque> ataques = new ArrayList<Ataque>((Arrays.asList(muddyWater, hydro, tackle, boom)));
+	public Feraligatr() {
+		super(nome, ataques,hp);
+		// TODO Auto-generated constructor stub
+	}
 	
 	@Override
 	public String toString() {
