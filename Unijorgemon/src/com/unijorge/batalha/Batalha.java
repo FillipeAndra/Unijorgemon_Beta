@@ -178,35 +178,37 @@ public class Batalha {
 	
 	public String trocarPokemon(int i, Player primeiro) {
 		String texto = null;
-		if(primeiro.getPokemons().get(i).getHp()> 0) {
-			switch(i) {
-			case 1: 
-				Pokemon pokemonSelecionado1 = primeiro.getPokemons().get(i);
-				primeiro.getPokemons().remove(i);
-				primeiro.getPokemons().add(0,pokemonSelecionado1);
-				break;
-			case 2: 
-				Pokemon pokemonSelecionado2 = primeiro.getPokemons().get(i);
-				primeiro.getPokemons().remove(i);
-				primeiro.getPokemons().add(0,pokemonSelecionado2);
-				break;
-			case 3:
-				Pokemon pokemonSelecionado3 = primeiro.getPokemons().get(i);
-				primeiro.getPokemons().remove(i);
-				primeiro.getPokemons().add(0,pokemonSelecionado3);
-				break;
-			case 4:
-				Pokemon pokemonSelecionado4 = primeiro.getPokemons().get(i);
-				primeiro.getPokemons().remove(i);
-				primeiro.getPokemons().add(0,pokemonSelecionado4);
-				break;
-			case 5: 
-				Pokemon pokemonSelecionado5 = primeiro.getPokemons().get(i);
-				primeiro.getPokemons().remove(i);
-				primeiro.getPokemons().add(0,pokemonSelecionado5);
-				break;
-			default:
-				texto = "Por favor digite um número válido!";
+		if(i>=1 && i<=5) {
+			if(primeiro.getPokemons().get(i).getHp()> 0) {
+				switch(i) {
+				case 1: 
+					Pokemon pokemonSelecionado1 = primeiro.getPokemons().get(i);
+					primeiro.getPokemons().remove(i);
+					primeiro.getPokemons().add(0,pokemonSelecionado1);
+					break;
+				case 2: 
+					Pokemon pokemonSelecionado2 = primeiro.getPokemons().get(i);
+					primeiro.getPokemons().remove(i);
+					primeiro.getPokemons().add(0,pokemonSelecionado2);
+					break;
+				case 3:
+					Pokemon pokemonSelecionado3 = primeiro.getPokemons().get(i);
+					primeiro.getPokemons().remove(i);
+					primeiro.getPokemons().add(0,pokemonSelecionado3);
+					break;
+				case 4:
+					Pokemon pokemonSelecionado4 = primeiro.getPokemons().get(i);
+					primeiro.getPokemons().remove(i);
+					primeiro.getPokemons().add(0,pokemonSelecionado4);
+					break;
+				case 5: 
+					Pokemon pokemonSelecionado5 = primeiro.getPokemons().get(i);
+					primeiro.getPokemons().remove(i);
+					primeiro.getPokemons().add(0,pokemonSelecionado5);
+					break;
+				default:
+					texto = "Por favor digite um número válido!";
+				}
 			}
 		}else {
 			texto = "Por favor digite um número válido!";
