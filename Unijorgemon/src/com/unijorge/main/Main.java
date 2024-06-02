@@ -3,10 +3,11 @@ package com.unijorge.main;
 import com.unijorge.player.Player;
 import com.unijorge.pokemon.*;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 import com.unijorge.batalha.Batalha;
-
+import com.unijorge.arena.Arena;
 
 public class Main {
 
@@ -17,25 +18,48 @@ public class Main {
 		Player player2 = new Player();
 		Scanner sc = new Scanner(System.in);
 		String nome;
+		boolean controleValido;
 		ArrayList<Pokemon> pokemon = new ArrayList<Pokemon>();
 		ArrayList<Integer> numeroPokemonControle = new ArrayList<Integer>();
 		int numeroPokemon;
-
+		
+		controleValido = false;
 		for (int i = 0; i < 2; i++) {
 			System.out.println("Apresente-se treinador (digite seu nome) ");
 			nome = sc.next();
-
+			if(i == 1 && player1.getNome().equals(nome)){
+				nome = nome + "_2";
+			}
 			for (int j = 0; j < 6; j++) {
-
+				boolean inputValido = false;
 				while (true) {
-
+					
+					
+					
+					numeroPokemon = 0;
 					System.out.println("Quais são seus 6 pokemons " + nome + "? (digite o número do pokemon escolhido)"
 							+ "\n 1 - Blastoise\n 2 - Blaziken \n 3 - Charizard\n 4 - Empoleon\n"
 							+ " 5 - Feraligatr\n 6 - Infernape\n 7 - Meganium\n 8 - Sceptile\n"
 							+ " 9 - Swampert\n 10 - Torterra\n 11 - Typhlosion\n 12 - Venusaur");
 
-					numeroPokemon = sc.nextInt();
-
+					try {
+						
+						numeroPokemon = sc.nextInt();
+						controleValido = true;
+					} 
+					catch (InputMismatchException e) {				
+				
+						controleValido = false;
+						
+						sc.next();
+					}
+					
+					if (numeroPokemon < 1 || numeroPokemon > 12) {
+                        System.out.printf("\nErro! Um valor inválido foi digitado. "
+                                + "Por favor, digite um dos valores listados\n\n");
+                        controleValido = false;
+                    }
+					
 					if (numeroPokemonControle.contains(numeroPokemon) == false) {
 						numeroPokemonControle.add(numeroPokemon);
 						switch (numeroPokemon) {
@@ -75,16 +99,16 @@ public class Main {
 						case 12:
 							pokemon.add(new Venusaur());
 							break;
-						default:
-							System.out.printf("Erro! Um valor inválido foi digitado. "
-									+ "Por favor, digite um dos valores listados");
-
+						/*default:
+							System.out.printf("\nErro! Um valor inválido foi digitado. "
+									+ "Por favor, digite um dos valores listados\n\n");
+						*/
 						}
 						if (numeroPokemon <= 12 && numeroPokemon >= 1) {
 							break;
 						}
 					}
-					if (numeroPokemonControle.contains(numeroPokemon) == true) {
+					if (numeroPokemonControle.contains(numeroPokemon) == true && controleValido == true) {
 
 						System.out.println("Erro! Não é possível inserir o mesmo Pokémon duas vezes!");
 					}
@@ -96,7 +120,6 @@ public class Main {
 				player1 = new Player(nome, pokemon);
 				pokemon.clear();
 				numeroPokemonControle.clear();
-
 				break;
 			case 1:
 				player2 = new Player(nome, pokemon);
@@ -150,11 +173,12 @@ public class Main {
 				batalha.trocarPokemon(escolhaPokemon, primeiro);
 				
 				
-			}else {
+			} else {
 				System.out.println(primeiro.getNome() + ", o que você escolhe?");
 				
 				System.out.println("1) escolher ataque do pokemon\n"
-						+ "2)trocar de pokemon");
+						+ "2)trocar de pokemon \n" 
+						+ "0) encerrar a batalha");
 				
 				escolhaAcao = sc.nextInt();
 				if(escolhaAcao == 1) {
@@ -197,6 +221,8 @@ public class Main {
 					escolhaPokemon = sc.nextInt();
 					
 					batalha.trocarPokemon(escolhaPokemon, primeiro);
+				} else if (escolhaAcao == 0) {
+					break;
 				}
 			}
 			
