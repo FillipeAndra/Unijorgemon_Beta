@@ -36,7 +36,7 @@ public class Batalha {
 			if (TipoPlanta.class.isAssignableFrom(player1.getPokemons().get(0).getClass())
 					&& TipoAgua.class.isAssignableFrom(player2.getPokemons().get(0).getClass())) {
 
-				dano = ((player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())+10)+10;
+				dano = ((player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())+10);
 
 				Pokemon pokemon2 = player2.getPokemons().get(0);
 				pokemon2.setHp(pokemon2.getHp() - dano);

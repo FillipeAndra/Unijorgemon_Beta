@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 import com.unijorge.batalha.Batalha;
-import com.unijorge.arena.Arena;
+//import com.unijorge.arena.Arena;
 
 public class Main {
 
