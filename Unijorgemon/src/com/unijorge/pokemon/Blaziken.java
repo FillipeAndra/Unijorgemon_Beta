@@ -20,7 +20,7 @@ public class Blaziken extends Pokemon implements TipoFogo {
 	
 	public Blaziken() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

@@ -7,7 +7,7 @@ public class Tackle extends Ataque implements TipoNormal{
 	
 	public Tackle() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

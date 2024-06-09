@@ -18,7 +18,7 @@ public class Torterra extends Pokemon implements TipoPlanta {
 	
 	public Torterra() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

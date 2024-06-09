@@ -7,7 +7,7 @@ public class Ember extends Ataque implements TipoFogo {
 	
 	public Ember() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

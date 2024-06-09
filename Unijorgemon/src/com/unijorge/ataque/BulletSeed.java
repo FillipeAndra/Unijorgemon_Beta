@@ -7,7 +7,7 @@ public class BulletSeed extends Ataque implements TipoPlanta {
 	
 	public BulletSeed() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

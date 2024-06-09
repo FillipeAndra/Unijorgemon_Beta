@@ -17,7 +17,7 @@ public class Venusaur extends Pokemon implements TipoPlanta {
 	
 	public Venusaur() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

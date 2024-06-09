@@ -17,7 +17,7 @@ public class Swampert extends Pokemon implements TipoAgua {
 	
 	public Swampert() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

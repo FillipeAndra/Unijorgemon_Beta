@@ -8,7 +8,7 @@ public class Solar extends Ataque implements TipoPlanta {
 	
 	public Solar() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override

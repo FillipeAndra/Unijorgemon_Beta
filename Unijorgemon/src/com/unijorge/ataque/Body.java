@@ -9,7 +9,7 @@ public class Body extends Ataque implements TipoNormal {
 	
 	public Body() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

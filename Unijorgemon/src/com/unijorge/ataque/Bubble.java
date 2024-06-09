@@ -7,7 +7,7 @@ public class Bubble extends Ataque implements TipoAgua {
 
 	public Bubble() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

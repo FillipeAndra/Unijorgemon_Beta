@@ -18,7 +18,7 @@ public class Typhlosion extends Pokemon implements TipoFogo {
     
 	public Typhlosion() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 
 	}
 	

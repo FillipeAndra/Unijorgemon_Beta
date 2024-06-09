@@ -8,7 +8,7 @@ public class Boom extends Ataque implements TipoNormal {
 	
 	public Boom() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override

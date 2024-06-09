@@ -19,7 +19,7 @@ public class Meganium extends Pokemon implements TipoPlanta {
 	
 	public Meganium() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

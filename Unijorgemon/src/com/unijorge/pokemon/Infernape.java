@@ -19,7 +19,7 @@ public class Infernape extends Pokemon implements TipoFogo {
 	
 	public Infernape() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override
