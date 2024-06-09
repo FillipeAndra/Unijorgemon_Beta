@@ -20,7 +20,7 @@ public class Charizard extends Pokemon implements TipoFogo{
 	
 	public Charizard() {
 		super(nome,ataques, hp);
-		// TODO Auto-generated constructor stub
+
 				
 	}
 	

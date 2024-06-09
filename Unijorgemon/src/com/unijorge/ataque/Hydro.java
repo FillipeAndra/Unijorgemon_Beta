@@ -8,7 +8,7 @@ public class Hydro extends Ataque implements TipoAgua {
 
 	public Hydro() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

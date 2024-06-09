@@ -20,7 +20,7 @@ public class Empoleon extends Pokemon implements TipoAgua{
 	
 	public Empoleon() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

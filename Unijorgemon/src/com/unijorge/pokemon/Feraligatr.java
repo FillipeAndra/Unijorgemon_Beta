@@ -18,7 +18,7 @@ public class Feraligatr extends Pokemon implements TipoAgua{
 	
 	public Feraligatr() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

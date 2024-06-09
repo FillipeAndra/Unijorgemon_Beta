@@ -19,7 +19,6 @@ public class Blastoise extends Pokemon implements TipoAgua{
 	
 	public Blastoise() {
 		super("Blastoise", ataques,100);
-		// TODO Auto-generated constructor stub
 		
 	}
 	

@@ -8,7 +8,7 @@ public class Leaf extends Ataque implements TipoPlanta {
 	
 	public Leaf() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override

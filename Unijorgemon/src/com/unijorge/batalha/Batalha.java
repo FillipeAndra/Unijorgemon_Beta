@@ -21,8 +21,8 @@ public class Batalha {
 	}
 
 	public boolean verificarAtaque() {
-		int testAtaquePlayer = (int) (Math.random() * 20 + 1);
-		int testOutroPlayer = (int) (Math.random() * 20 + 1);
+		int testAtaquePlayer = (int) (Math.random() * 4 + 1);
+		int testOutroPlayer = (int) (Math.random() * 2 + 1);
 		if (testAtaquePlayer >= testOutroPlayer) {
 			return true;
 		} else {
@@ -119,7 +119,7 @@ public class Batalha {
 		} else if (contDerrota2 == player2.getPokemons().size()) {
 			return "O campeão desse duelo pokemon foi " + player1.getNome();
 		} else {
-			return null;
+			return "Os jogadores desistiram da luta";
 		}
 	}
 	
@@ -131,48 +131,7 @@ public class Batalha {
 				texto = texto+linha;
 			}
 		}
-		/*
-		if(primeiro.getPokemons().get(1).getHp() == 0 && 
-				primeiro.getPokemons().get(2).getHp() > 0) {
-			
-			texto = "1) "+primeiro.getPokemons().get(2).getNome()+"\n"+
-			"2) "+primeiro.getPokemons().get(3).getNome()+"\n"+
-			"3) "+primeiro.getPokemons().get(4).getNome()+"\n"+
-			"4) "+primeiro.getPokemons().get(5).getNome();
-			
-		}else if(primeiro.getPokemons().get(1).getHp() == 0 && 
-				primeiro.getPokemons().get(2).getHp() == 0
-				&& primeiro.getPokemons().get(3).getHp() > 0) {
-			
-			texto = "1) "+primeiro.getPokemons().get(3).getNome()+"\n"+
-					"2) "+primeiro.getPokemons().get(4).getNome()+"\n"+
-					"3) "+primeiro.getPokemons().get(5).getNome();
-			
-		}else if(primeiro.getPokemons().get(1).getHp() == 0 && 
-				primeiro.getPokemons().get(2).getHp() == 0
-				&& primeiro.getPokemons().get(3).getHp() == 0
-				&& primeiro.getPokemons().get(4).getHp() > 0) {
-			
-			texto = "1) "+primeiro.getPokemons().get(4).getNome()+"\n"+
-					"2) "+primeiro.getPokemons().get(5).getNome();
-			
-		}else if(primeiro.getPokemons().get(1).getHp() == 0 && 
-				primeiro.getPokemons().get(2).getHp() == 0
-				&& primeiro.getPokemons().get(3).getHp() == 0
-				&& primeiro.getPokemons().get(4).getHp() == 0
-				&& primeiro.getPokemons().get(5).getHp() > 0) {
-			
-			texto = "1) "+primeiro.getPokemons().get(5).getNome();
-			
-		}else {
-			texto = "1) "+primeiro.getPokemons().get(1).getNome()+"\n"+
-			"2) "+primeiro.getPokemons().get(2).getNome()+ "\n"+
-			"3) "+primeiro.getPokemons().get(3).getNome()+"\n"+
-			"4) "+primeiro.getPokemons().get(4).getNome()+"\n"+
-			"5) "+primeiro.getPokemons().get(5).getNome();
-		}
-		
-		*/
+	
 		return texto;
 	}
 	

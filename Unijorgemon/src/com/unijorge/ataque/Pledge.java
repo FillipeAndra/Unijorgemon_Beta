@@ -8,7 +8,7 @@ public class Pledge extends Ataque implements TipoFogo {
 	
 	public Pledge() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override

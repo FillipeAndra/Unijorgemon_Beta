@@ -18,7 +18,7 @@ public class Sceptile extends Pokemon implements TipoPlanta{
 	
 	public Sceptile() {
 		super(nome, ataques,hp);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override

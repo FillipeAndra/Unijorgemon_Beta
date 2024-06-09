@@ -8,7 +8,7 @@ public class Magma extends Ataque implements TipoFogo {
 	
 	public Magma() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override

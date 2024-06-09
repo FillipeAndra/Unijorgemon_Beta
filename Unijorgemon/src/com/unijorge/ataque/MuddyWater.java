@@ -8,7 +8,7 @@ public class MuddyWater extends Ataque implements TipoAgua {
 	
 	public MuddyWater() {
 		super(nome, dano);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
