@@ -1,6 +1,6 @@
+/*declaração do pacote*/
 package com.unijorge.tipos;
 
-public interface TipoFogo {
-	
-	
+/*criação da interface do tipo fogo*/
+public interface TipoFogo {	
 }
