@@ -1,35 +1,71 @@
+/*declaração de pacote*/
 package com.unijorge.main;
 
+/*importação da classe player*/
 import com.unijorge.player.Player;
+
+/*importação de todos os pokemons*/
 import com.unijorge.pokemon.*;
+
+/*importação do arraylist*/
 import java.util.ArrayList;
+
+/*importação do InputMismatchException*/
 import java.util.InputMismatchException;
+
+/*importação do locale*/
 import java.util.Locale;
+
+/*importação da classe scanner*/
 import java.util.Scanner;
+
+/*importação da classe batalha*/
 import com.unijorge.batalha.Batalha;
 
 
 public class Main {
 
 	public static void main(String args[]) {
+		
+		/*para aceitar número real com com invés de vírgula*/
 		Locale.setDefault(Locale.US);
+		
+		/*criação do objeto batalha*/
 		Batalha batalha = new Batalha();
+		
+		/*criação dos objetos dos players*/
 		Player player1 = new Player();
 		Player player2 = new Player();
+		
+		/*criação do obejto scanner*/
 		Scanner sc = new Scanner(System.in);
+		
+		/*variavel nome*/
 		String nome;
-		boolean controleValido;
+		
+		/*boolean para controle do try, catch*/
+		boolean controleValido = false;
+		
+		/*ArrayList para  armazenamento das seleções do pokemons*/
 		ArrayList<Pokemon> pokemon = new ArrayList<Pokemon>();
+		
+		/*número para teste de entrada de pokemons*/
 		ArrayList<Integer> numeroPokemonControle = new ArrayList<Integer>();
+		
+		/*número de escolha de pokemon*/
 		int numeroPokemon;
-
-		controleValido = false;
+		
+		/*loop para criação de players*/
 		for (int i = 0; i < 2; i++) {
+			
+			/*cadastro de nome de player*/
 			System.out.println("Apresente-se treinador (digite seu nome) ");
 			nome = sc.next();
 			if (i == 1 && player1.getNome().equals(nome)) {
 				nome = nome + "_2";
 			}
+			
+			/*cadastro de pokemons na lista de pokemons*/
 			for (int j = 0; j < 6; j++) {
 				boolean inputValido = false;
 				while (true) {
@@ -39,7 +75,8 @@ public class Main {
 							+ "\n 1 - Blastoise\n 2 - Blaziken \n 3 - Charizard\n 4 - Empoleon\n"
 							+ " 5 - Feraligatr\n 6 - Infernape\n 7 - Meganium\n 8 - Sceptile\n"
 							+ " 9 - Swampert\n 10 - Torterra\n 11 - Typhlosion\n 12 - Venusaur");
-
+					
+					/*try catch para em caso de letra ou outros tipos diferentes de inteiro*/
 					try {
 
 						numeroPokemon = sc.nextInt();
@@ -109,6 +146,7 @@ public class Main {
 
 				}
 			}
+			/*cadastro de players*/
 			switch (i) {
 			case 0:
 				player1 = new Player(nome, pokemon);
@@ -120,7 +158,8 @@ public class Main {
 				break;
 			}
 		}
-
+		
+		/*decisão de quem joga primeiro*/
 		Player primeiro = batalha.quemComeca(player1, player2);
 		Player segundo;
 		if (primeiro == player1) {
@@ -129,8 +168,11 @@ public class Main {
 			segundo = player1;
 		}
 
+		/*loop para a batalha pokemon*/
 		while (batalha.anunciarVitoria(player1, player2).equals("Os jogadores desistiram da luta")) {
 			int escolhaAcao = 0;
+			
+			/*loop de troca de pokemon forçada quando o selecionado foi derrotado*/
 			while (primeiro.getPokemons().get(0).getHp() == 0) {
 
 				int escolhaPokemon = 0;
@@ -139,7 +181,9 @@ public class Main {
 								+ ". E ele não aguenta mais batalhar " + "para qual pokemon Você quer trocar?");
 
 				System.out.println(batalha.escolhaPokemonTroca(primeiro));
-
+				
+				/*try catch para validação de não quebrar ao receber valores não inteiros
+				 * e escolha de outro pokemon*/
 				try {
 
 					escolhaPokemon = sc.nextInt();
@@ -181,6 +225,8 @@ public class Main {
 				}
 
 			}
+			
+			/*realização da luta e suas escolhas com try catch para validação das escolhas*/
 			while (primeiro.getPokemons().get(0).getHp() != 0) {
 
 				while (true) {
@@ -212,7 +258,8 @@ public class Main {
 					;
 
 				}
-
+				
+				/*escolha de ataques com try catch*/
 				if (escolhaAcao == 1) {
 					int escolhaAtaque = 0;
 					while (true) {
@@ -257,6 +304,8 @@ public class Main {
 						}
 
 					}
+					
+				/*escolha de troca de pokemon com try catch para validação de valores inteiros*/
 				} else if (escolhaAcao == 2) {
 
 					int escolhaPokemon = 0;
@@ -308,16 +357,18 @@ public class Main {
 						}
 
 					}
-
+					
+				/*quebra do loop das escolhas em caso de desistência*/
 				} else if (escolhaAcao == 0) {
 					break;
 				}
-
+				
+				/*mudança do player que fará as escolhas*/
 				Player primeiroViraSegundo = primeiro;
 				primeiro = segundo;
 				segundo = primeiroViraSegundo;
 			}
-
+			/*para para o loop da luta inteiria*/
 			if (escolhaAcao == 0) {
 				break;
 			}
