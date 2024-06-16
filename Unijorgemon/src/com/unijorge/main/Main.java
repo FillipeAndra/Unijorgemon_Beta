@@ -377,7 +377,7 @@ public class Main {
 
 		}
 		
-		/*anunciar resultado da vitoria*/
+		/*anunciar resultado da batalha*/
 		System.out.println(batalha.anunciarVitoria(player1, player2));
 		sc.close();
 	}
