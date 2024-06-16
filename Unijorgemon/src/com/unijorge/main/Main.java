@@ -27,7 +27,7 @@ public class Main {
 
 	public static void main(String args[]) {
 		
-		/*para aceitar número real com com invés de vírgula*/
+		/*para aceitar número real com ponto invés de vírgula*/
 		Locale.setDefault(Locale.US);
 		
 		/*criação do objeto batalha*/
@@ -49,7 +49,7 @@ public class Main {
 		/*ArrayList para  armazenamento das seleções do pokemons*/
 		ArrayList<Pokemon> pokemon = new ArrayList<Pokemon>();
 		
-		/*número para teste de entrada de pokemons*/
+		/*ArrayList de números para teste de entrada de pokemons*/
 		ArrayList<Integer> numeroPokemonControle = new ArrayList<Integer>();
 		
 		/*número de escolha de pokemon*/
@@ -61,6 +61,8 @@ public class Main {
 			/*cadastro de nome de player*/
 			System.out.println("Apresente-se treinador (digite seu nome) ");
 			nome = sc.next();
+			
+			/*em caso de nome repitido ele modifica para não ficar igual*/
 			if (i == 1 && player1.getNome().equals(nome)) {
 				nome = nome + "_2";
 			}
@@ -374,7 +376,8 @@ public class Main {
 			}
 
 		}
-
+		
+		/*anunciar resultado da vitoria*/
 		System.out.println(batalha.anunciarVitoria(player1, player2));
 		sc.close();
 	}
