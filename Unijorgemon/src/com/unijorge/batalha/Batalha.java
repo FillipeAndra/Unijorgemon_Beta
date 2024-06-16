@@ -42,7 +42,8 @@ public class Batalha {
 	public int aplicarDano(Player player1, Player player2, int indexAtaque, boolean ataque) {
 		int dano;
 		if (ataque == true) {
-			if (TipoPlanta.class.isAssignableFrom(player1.getPokemons().get(0).getClass())
+			if (TipoPlanta.class.isAssignableFrom(player1.getPokemons().get(0).getAtaques()
+					.get(indexAtaque).getClass())
 					&& TipoAgua.class.isAssignableFrom(player2.getPokemons().get(0).getClass())) {
 
 				dano = ((player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())+10);
@@ -51,7 +52,8 @@ public class Batalha {
 				pokemon2.setHp(pokemon2.getHp() - dano);
 				return dano;
 
-			} else if (TipoFogo.class.isAssignableFrom(player1.getPokemons().get(0).getClass())
+			} else if (TipoFogo.class.isAssignableFrom(player1.getPokemons().get(0).getAtaques()
+					.get(indexAtaque).getClass())
 					&& TipoPlanta.class.isAssignableFrom(player2.getPokemons().get(0).getClass())) {
 
 				dano = (player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())+10;
@@ -60,7 +62,8 @@ public class Batalha {
 				pokemon2.setHp(pokemon2.getHp() - dano);
 				return dano;
 
-			} else if (TipoAgua.class.isAssignableFrom(player1.getPokemons().get(0).getClass())
+			} else if (TipoAgua.class.isAssignableFrom(player1.getPokemons().get(0).getAtaques()
+					.get(indexAtaque).getClass())
 					&& TipoFogo.class.isAssignableFrom(player2.getPokemons().get(0).getClass())) {
 
 				dano = (player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())+10;
@@ -69,7 +72,8 @@ public class Batalha {
 				pokemon2.setHp(pokemon2.getHp() - dano);
 				return dano;
 
-			} else if (TipoFogo.class.isAssignableFrom(player1.getPokemons().get(0).getClass())
+			} else if (TipoFogo.class.isAssignableFrom(player1.getPokemons().get(0).getAtaques()
+					.get(indexAtaque).getClass())
 					&& TipoAgua.class.isAssignableFrom(player2.getPokemons().get(0).getClass())) {
 
 				dano = (player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())-10;
@@ -78,7 +82,8 @@ public class Batalha {
 				pokemon2.setHp(pokemon2.getHp() - dano);
 				return dano;
 
-			} else if (TipoAgua.class.isAssignableFrom(player1.getPokemons().get(0).getClass())
+			} else if (TipoAgua.class.isAssignableFrom(player1.getPokemons().get(0).getAtaques()
+					.get(indexAtaque).getClass())
 					&& TipoPlanta.class.isAssignableFrom(player2.getPokemons().get(0).getClass())) {
 
 				dano = (player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())-10;
@@ -87,7 +92,8 @@ public class Batalha {
 				pokemon2.setHp(pokemon2.getHp() - dano);
 				return dano;
 
-			} else if (TipoPlanta.class.isAssignableFrom(player1.getPokemons().get(0).getClass())
+			} else if (TipoPlanta.class.isAssignableFrom(player1.getPokemons().get(0).getAtaques()
+					.get(indexAtaque).getClass())
 					&& TipoFogo.class.isAssignableFrom(player2.getPokemons().get(0).getClass())) {
 
 				dano = (player1.getPokemons().get(0).getAtaques().get((indexAtaque )).getDano())-10;
@@ -109,7 +115,6 @@ public class Batalha {
 		}
 
 	}
-
 	/*para anunciar vitória ele verifcia se todos os pokemons de um player estão
 	* caídos ou caso eles desistirem da luta*/
 	public String anunciarVitoria(Player player1, Player player2) {
