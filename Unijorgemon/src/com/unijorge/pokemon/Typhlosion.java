@@ -1,11 +1,22 @@
+/*declaração do pacote*/
 package com.unijorge.pokemon;
+
+/*importação da interface tipo fogo*/
 import com.unijorge.tipos.TipoFogo;
-import java.util.Arrays;
-import java.util.ArrayList;
+
+/*importação de todos as classes do package ataque*/
 import com.unijorge.ataque.*;
 
+/*importação da classe array*/
+import java.util.Arrays;
+
+/*importação da classe arraylist*/
+import java.util.ArrayList;
+
+/*criação da classe sceptile filha de pokemon implementando classe tipo fogo*/
 public class Typhlosion extends Pokemon implements TipoFogo {
 	
+	/*declaração dos atributos da classe*/
 	private static String nome = "Typhlosion";
 	private static int hp = 100;
 	
@@ -16,12 +27,12 @@ public class Typhlosion extends Pokemon implements TipoFogo {
 	
 	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(pledge, magma, body, tackle));
     
+	/*método construtor usando o da classe Pokemon*/ 
 	public Typhlosion() {
 		super(nome, ataques,hp);
-
-
 	}
 	
+	/*sobrescrição do método toString para imprimir o atributo nome*/
 	@Override
 	public String toString() {
 		return this.nome; 

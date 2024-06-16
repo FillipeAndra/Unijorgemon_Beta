@@ -1,11 +1,22 @@
+/*declaração do pacote*/
 package com.unijorge.pokemon;
-import com.unijorge.ataque.*;
+
+/*importação da interface tipo água*/
 import com.unijorge.tipos.TipoAgua;
-import java.util.ArrayList;
+
+/*importação de todos as classes do package ataque*/
+import com.unijorge.ataque.*;
+
+/*importação da classe array*/
 import java.util.Arrays;
 
-public class Blastoise extends Pokemon implements TipoAgua{
+/*importação da classe arraylist*/
+import java.util.ArrayList;
 
+/*criação da classe sceptile filha de pokemon implementando classe tipo água*/
+public class Blastoise extends Pokemon implements TipoAgua{
+	
+	/*declaração dos atributos da classe*/
 	private static String nome = "Blastoise";
 	private static int hp = 100;
 	
@@ -16,13 +27,13 @@ public class Blastoise extends Pokemon implements TipoAgua{
 	
 	private static ArrayList<Ataque> ataques = new ArrayList<Ataque>(Arrays.asList(bubble,hydro,boom,tackle));
 	
-	
+	/*método construtor usando o da classe Pokemon*/ 
 	public Blastoise() {
 		super("Blastoise", ataques,100);
 		
 	}
 	
-	
+	/*sobrescrição do método toString para imprimir o atributo nome*/
 	@Override
 	public String toString() {
 		return this.nome; 

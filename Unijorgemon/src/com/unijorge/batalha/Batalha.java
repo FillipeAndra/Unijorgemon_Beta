@@ -1,12 +1,19 @@
+/*delcaração do pacote*/
 package com.unijorge.batalha;
 
+/*importação da classe pokemon*/
 import com.unijorge.pokemon.Pokemon;
+
+/*importação da classe player*/
 import com.unijorge.player.Player;
+
+/*importação de todos os tipos*/
 import com.unijorge.tipos.*;
 
+/*declaração da classe batalha*/
 public class Batalha {
 
-
+	/*metodo para determinar quem começa a batalha*/
 	public Player quemComeca(Player player1, Player player2) {
 		while (true) {
 			int testePlayer1 = (int) (Math.random() * 20 + 1);
@@ -19,7 +26,8 @@ public class Batalha {
 			}
 		}
 	}
-
+	
+	/*método de verificar se o ataque acerta com menor chance de esquiva para o atacado*/
 	public boolean verificarAtaque() {
 		int testAtaquePlayer = (int) (Math.random() * 4 + 1);
 		int testOutroPlayer = (int) (Math.random() * 2 + 1);
@@ -29,7 +37,8 @@ public class Batalha {
 			return false;
 		}
 	}
-
+	
+	/*método para aplicar dano usando a tipagem dos pokemons*/
 	public int aplicarDano(Player player1, Player player2, int indexAtaque, boolean ataque) {
 		int dano;
 		if (ataque == true) {
@@ -101,8 +110,8 @@ public class Batalha {
 
 	}
 
-	// para anunciar vitória ele verifcia se todos os pokemons de um player estão
-	// caídos
+	/*para anunciar vitória ele verifcia se todos os pokemons de um player estão
+	* caídos ou caso eles desistirem da luta*/
 	public String anunciarVitoria(Player player1, Player player2) {
 		int contDerrota1 = 0;
 		int contDerrota2 = 0;
@@ -123,6 +132,7 @@ public class Batalha {
 		}
 	}
 	
+	/*método para demonstrar os pokemons disponíveis para troca*/
 	public String escolhaPokemonTroca(Player primeiro) {
 		String texto = "";
 		for(int i = 1; i <primeiro.getPokemons().size(); i++) {
@@ -135,6 +145,7 @@ public class Batalha {
 		return texto;
 	}
 	
+	/*método para efetivar a troca de pokemons*/
 	public String trocarPokemon(int i, Player primeiro) {
 		String texto = null;
 		if(i>=1 && i<=5) {
