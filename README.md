@@ -1,1 +1,1 @@
-Aqui eu e vini vamos discutir qual commit jogaremos para a organização vacas_del_brasil 
+Aqui Fillipe Andrade Barreto e Vinicius Queiroz Fonseca criaram um jogo tal qual Pokemon Stadium em CLI usando os conceitos de POO e como linguagem de programação o Java.
